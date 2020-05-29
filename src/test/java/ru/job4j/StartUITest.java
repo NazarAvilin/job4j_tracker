@@ -1,7 +1,9 @@
-package ru.job4j.tracker;
+package ru.job4j;
 
 
 import org.junit.Test;
+import ru.job4j.tracker.*;
+
 import static org.hamcrest.core.Is.is;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
