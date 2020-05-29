@@ -10,6 +10,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class FindByNameActionTest {
+
     private final PrintStream def = System.out;
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
 
