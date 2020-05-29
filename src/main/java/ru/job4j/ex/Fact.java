@@ -1,6 +1,7 @@
 package ru.job4j.ex;
 
 public class Fact {
+
     public static void main(String[] args) {
         System.out.println(new Fact().calc(4));
     }
@@ -16,4 +17,5 @@ public class Fact {
         }
         return rsl;
     }
+
 }
