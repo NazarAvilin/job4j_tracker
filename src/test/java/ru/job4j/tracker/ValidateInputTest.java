@@ -13,13 +13,13 @@ public class ValidateInputTest {
         ByteArrayOutputStream mem = new ByteArrayOutputStream();
         PrintStream out = System.out;
         System.setOut(new PrintStream(mem));
-        String[] data = {"one", "1"};
-        ValidateInput input = new ValidateStubInput(data);
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[] {"one", "1"})
+        );
         input.askInt("Enter");
         assertThat(
-                    mem,
-                    is(String.format("Please enter validate data again.%n")
-                    )
+                mem.toString(),
+                is(String.format("Please enter validate data again.%n"))
         );
         System.setOut(out);
     }
