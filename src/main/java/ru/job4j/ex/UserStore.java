@@ -17,8 +17,10 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (!user.isValid() || user.getUsername().length() < 3) {
+        if (!user.isValid()) {
             throw new UserInvalidException("User is not valid");
+        } else if (user.getUsername().length() < 3) {
+            throw new UserInvalidException("User's name is not valid, must be more than 3 letters");
         }
         return true;
     }
@@ -33,12 +35,11 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserInvalidException ex) {
-            System.out.println(ex.getMessage());
-        } catch (UserNotFoundException ex) {
-            System.out.println(ex.getMessage());
+        } catch (UserInvalidException uie) {
+            System.out.println(uie.getMessage());
+        } catch (UserNotFoundException unfe) {
+            System.out.println(unfe.getMessage());
         }
-
     }
 
 }
