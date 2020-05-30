@@ -22,7 +22,7 @@ public class FindAllActionTest {
         Item item = new Item("fix bug");
         tracker.add(item);
         ShowAllAction act = new ShowAllAction();
-        act.execute(new StubInput(new String[] {}), tracker);
+        //act.execute(new StubInput(new String[] {}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
                 .add(item.getId() + " " + item.getName())
                 .toString();
