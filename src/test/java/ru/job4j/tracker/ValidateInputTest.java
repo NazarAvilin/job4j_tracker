@@ -17,8 +17,9 @@ public class ValidateInputTest {
         ValidateInput input = new ValidateStubInput(data);
         input.askInt("Enter");
         assertThat(
-                mem,
-                is(String.format("Please enter validate data again.%n"))
+                    mem,
+                    is(String.format("Please enter validate data again.%n")
+                    )
         );
         System.setOut(out);
     }
