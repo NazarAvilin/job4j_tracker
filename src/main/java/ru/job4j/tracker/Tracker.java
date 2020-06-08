@@ -27,7 +27,7 @@ public class Tracker {
 
     private String generateId() {
         Random random = new Random();
-        return String.valueOf(random.nextLong() + System.currentTimeMillis());
+        return String.valueOf(((random.nextLong() + System.currentTimeMillis()) / 1000000000) / 100000);
     }
 
     public List<Item> findAll() {
