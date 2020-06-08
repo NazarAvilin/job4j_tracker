@@ -7,13 +7,12 @@ import java.util.Random;
 public class Tracker {
 
     private final List<Item> items = new ArrayList<>();
-    private int position = 0;
 
     private int indexOf(String id) {
         int rsl = -1;
-        for (int index = 0; index < position; index++) {
-            if (items.get(index).getId().equals(id)) {
-                rsl = index;
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                rsl = items.indexOf(item);
                 break;
             }
         }
@@ -56,7 +55,8 @@ public class Tracker {
         boolean rsl = false;
         if (index != -1) {
             item.setId(id);
-            items.set(index, item);
+            items.add(index, item);
+            items.remove(index + 1);
             rsl = true;
         }
         return rsl;
