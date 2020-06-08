@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Tracker {
 
-    private List<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     private int position = 0;
 
     private int indexOf(String id) {
