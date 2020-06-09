@@ -1,11 +1,9 @@
 package ru.job4j.collection;
 
 import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -72,4 +70,5 @@ public class JobTest {
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
+
 }
