@@ -16,23 +16,28 @@ public class JobTest {
     private Job writeTest = new Job("Write tests", 2);
 
     @Test
-    public void whenCompatorAbcByNameAndPriority() {
+    public void whenComparatorDescByNameAndPriority() {
         Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
-        int rsl = cmpNamePriority.compare(
-                new Job("Impl task", 0),
-                new Job("Fix bug", 1)
-        );
-        assertThat(rsl, lessThan(1));
+        int rsl = cmpNamePriority.compare(implTask, fixBug);
+        assertThat(rsl, lessThan(0));
     }
 
     @Test
-    public void whenCompatorDescByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
-        int rsl = cmpNamePriority.compare(
-                new Job("Impl task", 0),
-                new Job("Fix bug", 1)
-        );
-        assertThat(rsl, lessThan(0));
+    public void whenComparatorAscByNameAndAscPriority() {
+        Comparator<Job> cmpName = new JobAscByName().thenComparing(new JobAscByPriority());
+        List<Job> unsorted = Arrays.asList(implTask, fixAnotherBug, writeTest, fixBug);
+        List<Job> sorted = Arrays.asList(fixAnotherBug, fixBug, implTask, writeTest);
+        unsorted.sort(cmpName);
+        assertThat(unsorted, is(sorted));
+    }
+
+    @Test
+    public void whenComparatorDescByNameAndAscPriority() {
+        Comparator<Job> cmpName = new JobDescByName().thenComparing(new JobAscByPriority());
+        List<Job> unsorted = Arrays.asList(implTask, fixAnotherBug, writeTest, fixBug);
+        List<Job> sorted = Arrays.asList(writeTest, implTask, fixAnotherBug, fixBug);
+        unsorted.sort(cmpName);
+        assertThat(unsorted, is(sorted));
     }
 
     @Test
