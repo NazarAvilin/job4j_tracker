@@ -21,33 +21,6 @@ public class TrackerTest {
     }
 
     @Test
-    public void whenfindAll() {
-        Tracker tracker = new Tracker();
-        Item item1 = new Item("test1");
-        Item item2 = new Item("test2");
-        Item item3 = new Item("test3");
-        tracker.add(item1);
-        tracker.add(item2);
-        tracker.add(item3);
-        Item[] expect = {item1, item2, item3};
-        assertThat(tracker.findAll(), is(expect));
-    }
-
-    @Test
-    public void whenfindByName() {
-        Tracker tracker = new Tracker();
-        String value = "test2";
-        Item item1 = new Item("test1");
-        Item item2 = new Item("test2");
-        Item item3 = new Item("test3");
-        tracker.add(item1);
-        tracker.add(item2);
-        tracker.add(item3);
-        Item[] expect = {item2};
-        assertThat(tracker.findByName(value), is(expect));
-    }
-
-    @Test
     public void whenfindByID() {
         Tracker tracker = new Tracker();
         Item item1 = new Item("test1");
