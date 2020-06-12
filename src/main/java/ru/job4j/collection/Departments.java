@@ -7,9 +7,10 @@ public class Departments {
     public static List<String> fillGaps(List<String> deps) {
         HashSet<String> tmp = new HashSet<>();
         for (String value : deps) {
-            String start = "";
+            StringBuilder start = new StringBuilder();
             for (String el : value.split("/")) {
-                tmp.add(start + "/" + el);
+                tmp.add(start + el);
+                start.append(el).append("/");
             }
         }
         return new ArrayList<>(tmp);
