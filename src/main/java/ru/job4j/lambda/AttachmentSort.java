@@ -33,5 +33,21 @@ public class AttachmentSort {
         attachments.sort(nameComparator);
         System.out.println(attachments);
 
+        System.out.println("====================================");
+
+        /**
+         * компаратор для строк через лямбда. Строки сравниватаюся через метод compareTo.
+         */
+        Comparator<Attachment> cmpText = (left, right) -> left.getName().compareTo(right.getName());
+        attachments.sort(cmpText);
+        System.out.println(attachments);
+
+        /**
+         * компаратор для строк через лямбда. Компаратор сортировает строки по убыванию длины.
+         */
+        Comparator<Attachment> cmpDescSize = (left, right) -> Integer.compare(right.getSize(), left.getSize());
+        attachments.sort(cmpDescSize);
+        System.out.println(attachments);
+
     }
 }
