@@ -49,7 +49,7 @@ public class AttachmentSort {
 //        attachments.sort(cmpDescSize);
 //        System.out.println(attachments);
 
-//        System.out.println("====================================");
+        System.out.println("====================================");
 
         /**
          * компаратор для строк через лямбда. Строки сравниватаюся через метод compareTo.
