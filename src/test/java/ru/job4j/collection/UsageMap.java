@@ -6,7 +6,7 @@ public class UsageMap {
 
     public static void main(String[] args) {
         HashMap<String, String> map = new HashMap<>();
-        map.put("parsentev@yandex.ru", "Petr Arsentev Sergeevich");
+        map.put("parsentev@yandex.ru", "Arsentev Petr Sergeevich");
         map.put("avilin1@outlook.com", "Avilin Nazar Markovich");
         for (String key : map.keySet()) {
             String value = map.get(key);

@@ -26,7 +26,7 @@ public class JobTest {
     public void whenComparatorAscByNameAndAscPriority() {
         Comparator<Job> cmpName = new JobAscByName().thenComparing(new JobAscByPriority());
         List<Job> unsorted = Arrays.asList(implTask, fixAnotherBug, writeTest, fixBug);
-        List<Job> sorted = Arrays.asList(fixAnotherBug, fixBug, implTask, writeTest);
+        List<Job> sorted = List.of(fixAnotherBug, fixBug, implTask, writeTest);
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
@@ -35,7 +35,7 @@ public class JobTest {
     public void whenComparatorDescByNameAndAscPriority() {
         Comparator<Job> cmpName = new JobDescByName().thenComparing(new JobAscByPriority());
         List<Job> unsorted = Arrays.asList(implTask, fixAnotherBug, writeTest, fixBug);
-        List<Job> sorted = Arrays.asList(writeTest, implTask, fixAnotherBug, fixBug);
+        List<Job> sorted = List.of(writeTest, implTask, fixAnotherBug, fixBug);
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
@@ -44,7 +44,7 @@ public class JobTest {
     public void whenComparatorAscByName() {
         Comparator<Job> cmpName = new JobAscByName();
         List<Job> unsorted = Arrays.asList(implTask, writeTest, fixBug);
-        List<Job> sorted = Arrays.asList(fixBug, implTask, writeTest);
+        List<Job> sorted = List.of(fixBug, implTask, writeTest);
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
@@ -53,7 +53,7 @@ public class JobTest {
     public void whenComparatorDescByName() {
         Comparator<Job> cmpName = new JobDescByName();
         List<Job> unsorted = Arrays.asList(implTask, writeTest, fixBug);
-        List<Job> sorted = Arrays.asList(writeTest, implTask, fixBug);
+        List<Job> sorted = List.of(writeTest, implTask, fixBug);
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
@@ -62,7 +62,7 @@ public class JobTest {
     public void whenComparatorAscByPriority() {
         Comparator<Job> cmpName = new JobAscByPriority();
         List<Job> unsorted = Arrays.asList(implTask, writeTest, fixBug, fixAnotherBug);
-        List<Job> sorted = Arrays.asList(implTask, fixAnotherBug, fixBug, writeTest);
+        List<Job> sorted = List.of(implTask, fixAnotherBug, fixBug, writeTest);
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
@@ -71,7 +71,7 @@ public class JobTest {
     public void whenComparatorDescByPriority() {
         Comparator<Job> cmpName = new JobDescByPriority();
         List<Job> unsorted = Arrays.asList(implTask, writeTest, fixBug, fixAnotherBug);
-        List<Job> sorted = Arrays.asList(writeTest, fixBug, implTask, fixAnotherBug);
+        List<Job> sorted = List.of(writeTest, fixBug, implTask, fixAnotherBug);
         unsorted.sort(cmpName);
         assertThat(unsorted, is(sorted));
     }
