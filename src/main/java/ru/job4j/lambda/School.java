@@ -11,7 +11,7 @@ public final class School {
         return students.stream().filter(predict).collect(Collectors.toList());
     }
 
-    public Map<String, Student> collectInMap(List<Student> students) {
+    public static Map<String, Student> collectInMap(List<Student> students) {
         return students.stream().collect(Collectors.toMap(Student::getSurname, st -> st));
     }
 
