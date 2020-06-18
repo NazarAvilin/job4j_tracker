@@ -11,6 +11,11 @@ public class Student implements Comparable<Student> {
         this.score = score;
     }
 
+    public Student(String surname, int score) {
+        this.surname = surname;
+        this.score = score;
+    }
+
     public int getScore() {
         return score;
     }
