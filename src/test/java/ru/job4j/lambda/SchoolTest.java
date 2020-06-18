@@ -6,7 +6,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 
 
@@ -38,7 +37,7 @@ public class SchoolTest {
     }
 
     @Test
-    public void whenMap() {
+    public void whenMapTest() {
         Map<String, Student> result = students.stream().collect(Collectors.toMap(Student::getSurname, st -> st));
         assertThat(result, is(List.of(new Student("Max", 45))));
     }
