@@ -10,7 +10,7 @@ import static org.hamcrest.core.Is.is;
 
 public class ProfilesTest {
     @Test
-    public void WhenCollectTwoAddress() {
+    public void whenCollectTowAddress() {
         List<Profile> profileList = new ArrayList<>();
         profileList.add(new Profile(new Address("Yekaterinburg", "Lenin", 36, 17)));
         profileList.add(new Profile(new Address("Perm", "Frunze", 12, 9)));

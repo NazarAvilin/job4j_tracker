@@ -4,6 +4,8 @@ import org.junit.Test;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.junit.Assert.assertThat;
@@ -46,9 +48,12 @@ public class SchoolTest {
                 new Student("Juri", 30)
         );
         Map<String, Student> rsl = new School().collectInMap(students);
-        for (Map.Entry < String, Student > studentMap : rsl.entrySet()) {
+        for (Map.Entry<String, Student> studentMap : rsl.entrySet()) {
             System.out.println(studentMap.getKey() + " " + studentMap.getValue().toString());
         }
         assertThat(rsl, hasEntry("Petr", new Student("Petr", 90)));
     }
+
+
+
 }

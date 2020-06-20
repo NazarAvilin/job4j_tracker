@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 public class MatrixToListTest {
 
     @Test
-    public void whenArray2DtoList (){
-        Integer[][] array = {{1, 2},{3, 4}};
+    public void whenArray2DtoList() {
+        Integer[][] array = {{1, 2}, {3, 4}};
         List<Integer> expected = List.of(1, 2, 3, 4);
         List<Integer> result = MatrixToList.arrayToList(array);
         assertThat(result, is(expected));
