@@ -16,7 +16,6 @@ public class BankService {
             Optional<Account> findAccount = rsl.stream().filter(a -> a.equals(account)).findAny();
             if (findAccount.isEmpty()) {
                 rsl.add(account);
-                this.users.put(user.get(), rsl);
             }
         }
     }
