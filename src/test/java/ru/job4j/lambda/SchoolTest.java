@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.toMap;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.junit.Assert.assertThat;
@@ -55,5 +56,24 @@ public class SchoolTest {
     }
 
 
+    public static Map<String, Student> sortMap(List<Student> list) {
+        Map<String, Student> map;
+        map = list.stream().collect(toMap(
+                Student::getSurname,
+                student -> student,
+                (s, a) -> s)
+        );
+        return map;
+    }
+
+    @Test
+    public void whenMapTest() {
+        Map<String, Student> map = students.stream().collect(toMap(
+                Student::getSurname,
+                st -> st,
+                (s, a) -> s)
+        );
+        assertThat(map, is(sortMap(students)));
+    }
 
 }
